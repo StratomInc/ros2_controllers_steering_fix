@@ -54,7 +54,7 @@ bool SteeringOdometry::update_odometry(
   const double linear_velocity, const double angular, const double dt)
 {
   /// Integrate odometry:
-  SteeringOdometry::integrate_exact(linear_velocity * dt, angular);
+  SteeringOdometry::integrate_exact(linear_velocity * dt, angular * dt);
 
   /// We cannot estimate the speed with very small time intervals:
   if (dt < 0.0001)
